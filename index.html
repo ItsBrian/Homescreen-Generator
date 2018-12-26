@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="icon" href="https://image.flaticon.com/icons/png/128/25/25694.png">
+<title>Homescreen Generator</title>
+<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+<style>
+/* PADDING - MARGIN RESET */ 
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+* {
+    border:none;
+    background-image:none;
+    background-color:transparent;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+}
+
+body {
+	color: #fff;
+    background: linear-gradient(-45deg, #D93A4A, #B8565D, #1C978B, #357E7A);
+	background-size: 400% 400%;
+	-webkit-animation: Gradient 25s ease infinite;
+	-moz-animation: Gradient 25s ease infinite;
+	animation: Gradient 25s ease infinite;
+}
+
+@-webkit-keyframes Gradient {
+	0% {
+		background-position: 0% 40%
+	}
+	50% {
+		background-position: 90% 40%
+	}
+	100% {
+		background-position: 0% 40%
+	}
+}
+
+@-moz-keyframes Gradient {
+	0% {
+		background-position: 0% 40%
+	}
+	50% {
+		background-position: 90% 40%
+	}
+	100% {
+		background-position: 0% 40%
+	}
+}
+
+@keyframes Gradient {
+	0% {
+		background-position: 10% 40%
+	}
+	50% {
+		background-position: 90% 40%
+	}
+	100% {
+		background-position: 10% 40%
+	}
+}
+
+
+.configurationDiv, input[type=text], select{
+	color: #fff;
+    background: linear-gradient(-45deg, #D93A4A, #B8565D, #1C978B, #357E7A);
+	background-size: 400% 400%;
+	-webkit-animation: Gradient2 25s ease infinite;
+	-moz-animation: Gradient2 25s ease infinite;
+	animation: Gradient2 25s ease infinite;
+}
+
+@-webkit-keyframes Gradient2 {
+	0% {
+		background-position: 90% 40%
+	}
+	50% {
+		background-position: 0% 40%
+	}
+	100% {
+		background-position: 90% 40%
+	}
+}
+
+@-moz-keyframes Gradient2 {
+	0% {
+		background-position: 90% 40%
+	}
+	50% {
+		background-position: 0% 40%
+	}
+	100% {
+		background-position: 90% 40%
+	}
+}
+
+@keyframes Gradient2 {
+	0% {
+		background-position: 90% 40%
+	}
+	50% {
+		background-position: 0% 40%
+	}
+	100% {
+		background-position: 90% 40%
+	}
+}
+
+
+.newBody {
+    margin-left: 25%;
+    margin-right: 25%;
+    width: 50%;
+}
+
+.headTitle {
+    font-family: 'Open Sans';
+    padding-top: 3vh;
+    padding-bottom: 3vh;
+    font-size: 38px;
+}
+
+.configurationDiv {
+    padding: 20px;
+    padding-top: 0px;
+    border: 1px solid white;
+    border-radius: 10px;
+}
+
+.configurationDiv p {
+    font-family: 'Open Sans';
+    padding-top: 2vh;
+    font-size: 22px;
+    text-shadow: 1px 1px black;
+}
+
+.confirm {
+    background-color: #4CAF50;
+    text-align: center;
+    width: 100%;
+    margin-top: 30px;
+    font-family: 'Open Sans';
+    color: white;
+    height: 40px;
+    border-radius: 4px;
+    outline: 0;
+    font-size: 20px;
+    box-shadow: 0 9px #999;
+}
+
+.confirm:hover {
+    background-color: #479E4C;
+}
+
+.confirm:active {
+    transform: translate(1px, 5px);
+    box-shadow: 0 5px #666;
+}
+
+input[type=text], select {
+    text-shadow: -0.7px -0.7px black;
+    font-size: 20px;
+    width: 100%;
+    outline: none;
+}
+
+select option, select optgroup{
+    color: black;
+    text-shadow: -0.7px -0.7px black;
+}
+
+::placeholder {
+    color: white;
+    font-style: italic;
+    font-size: 15px;
+}
+
+input[type=range] {
+    width: 90%;
+}
+
+.subtitleSelect {
+    width: 47%;
+}
+</style>
+</head>
+<body>
+<div class="newBody">
+
+<h1 class="headTitle"><span style="font-size:17px;">ItsBrian.github.io/</span><span style="font-size:0px;"> </span>Homescreen-Generator</h1>
+
+<div class="configurationDiv">
+<p>Username:<br><input placeholder="Enter Username" type="text" id="inputName"></p>
+<p>Username Size: <br><input id="inputTitleSize" type="range" min="10" max="50" oninput="document.getElementById('spanTitleSize').innerHTML = ' (' + document.getElementById('inputTitleSize').value * 2 + 'px)';"><span id="spanTitleSize"> (60px)</span></p>
+<p>Time:<br>
+<select class="subtitleSelect" id="subtitle1">
+  <optgroup label="Select one:">
+  <option value="">Hours</option>
+  <option value="">Hours / Minutes</option>
+  <option value="">Hours / Minutes / Seconds</option>
+  </optgroup>
+</select>
++
+<select class="subtitleSelect" id="subtitle2">
+  <optgroup label="Select one:">
+  <option value="">24 Hours</option>
+  <option value="">12 Hours ( AM / PM )</option>
+  </optgroup>
+</select>
+</p>
+<p>Time Size: <br><input id="inputSubtitleSize" type="range" min="10" max="50" value="20" oninput="document.getElementById('spanSubtitleSize').innerHTML = ' (' + document.getElementById('inputSubtitleSize').value * 2 + 'px)';"><span id="spanSubtitleSize"> (40px)</span></p>
+
+<p>Search Engine: <br>
+<select id="selectEngine">
+  <optgroup label="Select one:">
+  <option value="">Google</option>
+  <option value="">DuckDuckGo</option>
+  <option value="">Bing</option>
+  <option value="">Yahoo</option>
+  </optgroup>
+</select>
+</p>
+<p>Language:<br>
+<select>
+	<optgroup label="Select one:">
+  <option value="">English (English)</option>
+  <option value="" disabled>Nederlands (Dutch)</option>
+  <option value="" disabled>Français (French)</option>
+    <option value="" disabled>More coming soon...</option>
+    </optgroup>
+</select>
+</p>
+<center>
+<button class="confirm" onclick="generate();">Generate</button>
+</center>
+</div>
+
+</div>
+
+<script>
+function generate(){
+    
+    // check for '&' or ' ' in name (n)
+    var n = document.getElementById("inputName").value;
+	if (name.indexOf('&') > -1){
+ 	 	alert("Please don't use '&' in your name");
+	} else if (name.indexOf(' ') > -1){
+		alert("Please don't use spaces in your name");
+	} else if (n == ''){
+    alert ("Please enter a name");
+    } else {
+    
+    //set username font size variable (ns)
+    var ns = document.getElementById("inputTitleSize").value * 2;
+    
+    //set subtitle time (td)
+    var pre1 = document.getElementById("subtitle1");
+    var subtitle1 = pre1.options[pre1.selectedIndex].text;
+    if (subtitle1 == "Hours"){
+        var td = "1";
+    } else if (subtitle1 == "Hours / Minutes"){
+        var td = "2";
+    } else {
+        var td = "3";
+    }
+    
+    //set subtitle hour display variable(hd)
+    var pre2 = document.getElementById("subtitle2");
+    var subtitle2 = pre2.options[pre2.selectedIndex].text;
+    if (subtitle2 == "24 Hours"){
+        var hd = "1";
+    } else {
+        var hd = "2";
+    }
+    
+    // set subtitle size variable (ss)
+    var ss = document.getElementById("inputSubtitleSize").value * 2;
+    
+    // set search engine variable (se)
+    var pre3 = document.getElementById("selectEngine");
+    var selectedEngine = pre3.options[pre3.selectedIndex].text;
+    if (selectedEngine == "Google"){
+        var se = "1";
+    } else if (selectedEngine == "DuckDuckGo"){
+        var se = "2";
+    } else if (selectedEngine == "Bing"){
+        var se = "3";
+    } else {
+        var se = "4";
+    }
+    
+    var win = window.open("https://home.jouwweb.be/?" + "n=" + n + "&ns=" + ns + "&td=" + td + "&hd=" + hd + "&ss=" + ss + "&se=" + se, '_blank');
+    win.focus();
+    
+    
+    
+    
+    
+    
+     // alert("Name: " + n + "\nName Size: " + ns + "\n" + td + "\n" + hd + "\n" + ss + "\n" + se);
+    
+    }
+    
+    
+}
+</script>
+
+</body>
+</html>
